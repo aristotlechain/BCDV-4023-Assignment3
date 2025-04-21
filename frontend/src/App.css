@@ -1,0 +1,236 @@
+/* App.css */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #2c3e50, #1a2639);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 960px;
+  padding: 0 1.5rem;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.savvy-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.5));
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #f39c12;
+  margin: 0.5rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.app-subtitle {
+  color: #ecf0f1;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.price-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+}
+
+.price-card-header {
+  background: linear-gradient(90deg, #f39c12, #e67e22);
+  padding: 1rem;
+  border-bottom: none;
+}
+
+.price-card-header h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.pairs-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pair-option {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.pair-option:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.pair-option.selected {
+  border-color: #f39c12;
+  background: rgba(243, 156, 18, 0.1);
+}
+
+.pair-radio {
+  margin: 0;
+}
+
+.pair-radio label {
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.action-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.action-button {
+  background: linear-gradient(90deg, #f39c12, #e67e22);
+  border: none;
+  padding: 0.8rem 2.5rem;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+}
+
+.action-button:hover {
+  background: linear-gradient(90deg, #e67e22, #d35400);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(243, 156, 18, 0.4);
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
+
+.action-button:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.result-pair {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f39c12;
+}
+
+.result-arrow {
+  margin: 0 1rem;
+  color: #ecf0f1;
+  font-size: 1.8rem;
+}
+
+.result-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ecf0f1;
+}
+
+.result-timestamp {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+.app-footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .pairs-container {
+    grid-template-columns: 1fr;
+  }
+
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .result-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .result-arrow {
+    transform: rotate(90deg);
+    margin: 0.5rem 0;
+  }
+}
